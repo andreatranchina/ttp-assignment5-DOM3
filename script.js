@@ -125,7 +125,7 @@ btnClear.addEventListener("click", function (){
     }
 })
 
-//fill all uncolored 
+//fill all uncolored cells
 let fillAllU = document.querySelector(".btn-fill-u");
 fillAllU.addEventListener("click", function(){
     let cellNodeList = document.querySelectorAll(".cell");
