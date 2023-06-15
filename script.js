@@ -137,4 +137,14 @@ fillAllU.addEventListener("click", function(){
     }
 })
 
+//fill all
+let btnFillAll = document.querySelector(".btn-fill-all");
+btnFillAll.addEventListener("click", function(){
+    let cellNodeList = document.querySelectorAll(".cell");
+    let cellArray = [...cellNodeList];
+    for(let i=0; i<cellArray.length; i++){
+        cellArray[i].style.backgroundColor = currentColor;
+    }
+})
+
 
