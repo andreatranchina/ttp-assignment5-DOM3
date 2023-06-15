@@ -8,15 +8,21 @@
 </head>
 <body>
     <navbar class="nav">ColorPicker</navbar>
-    <button class="btn-add-col">Add column</button>
-    <div class="grid">
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
+    <div id = buttons>
+        <button class="btn-add-col btn-option">Add column</button>
+        <button class="btn-option">Add rows</button>
+        <button class="btn-option" onclick="removeRows()">Remove Rows</button>
+        <button class="btn-option" onclick="removeCols()()">Remove Columns</button>
+    
+        <button class="btn-option" onclick="fillAllUnc()">Fill Uncolored</button>
+        <button class="btn-option" onclick="fillAll()">Color All</button>
+        <button class="btn-option" onclick="clearAll()">Clear All</button>
+    
     </div>
+
+   
     <h1>Pick a color and to change the color of the grid!</h1>
-    <select>
+    <select class="dropdown">
         <option selected disabled>Choose a color</option>
        
         <option id="red">Red</option>
@@ -26,18 +32,15 @@
         <option id="blue">Blue</option>
         <option id="purple">Purple</option>
       </select>
+    <div class="grid">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
 
-      <br><br>
-      <div id = buttons>
-    <button onclick="addCols()">Add Columns</button>
-    <button onclick="removeRows()">Remove Rows</button>
-    <button onclick="removeCols()()">Remove Columns</button>
 
-    <button onclick="fillAllUnc()">Fill All Uncolored Cells</button>
-    <button onclick="fillAll()">Fill All Cells With Current Color</button>
-    <button onclick="clearAll()">Clear Colors</button>
 
-</div>
 <script src="./script.js"></script>
 </body>
 </html>

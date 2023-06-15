@@ -2,20 +2,39 @@
     margin: 0;
 }
 
+#buttons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
 
-.btn-add-col{
-    width: 15%;
-    height: 40px;
+.btn-option{
+    /* width: auto; */
+    width: 10rem;
+    height: 50px;
     border-radius: 2rem;
     border: solid black 2px;
     background-color: black;
     color: white;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 700;
+}
+
+.dropdown{
+    background-color: black;
+    color: white;
+    border: solid black 2px;
+    border-radius: 1rem;
+    align-self: center;
+    margin-top: 1rem;
+    padding: 0.4rem;
 }
 
 body{
     background-image: radial-gradient(rgb(255, 247, 0), rgb(76, 0, 255));
+    text-align: center
 }
 
 .nav{
