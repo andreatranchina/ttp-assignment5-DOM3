@@ -115,7 +115,14 @@ cellGrid.addEventListener("click", function(event){
     cell.style.backgroundColor = currentColor;
 })
 
-
-
+//clear all cell colors
+let btnClear = document.querySelector(".btn-clear-all");
+btnClear.addEventListener("click", function (){
+    let cellNodeList = document.querySelectorAll(".cell");
+    let cellArray = [...cellNodeList];
+    for(let i=0; i<cellArray.length; i++){
+        cellArray[i].style.backgroundColor = "";
+    }
+})
 
 
