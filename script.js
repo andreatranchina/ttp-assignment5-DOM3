@@ -98,7 +98,7 @@ function removeRow(){
 }
 
 //select a color from dropdown
-let currentColor = "white";
+let currentColor = "";
 
 let colorDropdown = document.querySelector(".dropdown");
 
@@ -124,7 +124,7 @@ btnClear.addEventListener("click", function (){
     let cellNodeList = document.querySelectorAll(".cell");
     let cellArray = [...cellNodeList];
     for(let i=0; i<cellArray.length; i++){
-        cellArray[i].style.backgroundColor = "white";
+        cellArray[i].style.backgroundColor = "";
     }
 })
 
@@ -134,7 +134,7 @@ fillAllU.addEventListener("click", function(){
     let cellNodeList = document.querySelectorAll(".cell");
     let cellArray = [...cellNodeList];
     for(let i=0; i<cellArray.length; i++){
-        if(cellArray[i].style.backgroundColor=="white"){
+        if(cellArray[i].style.backgroundColor==""){
             cellArray[i].style.backgroundColor = currentColor;
         }
     }
