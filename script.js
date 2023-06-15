@@ -94,3 +94,17 @@ function removeRow(){
         numCols = 0;
     }
 }
+
+//select a color from dropdown
+let currentColor = "";
+
+let colorDropdown = document.querySelector(".dropdown");
+
+colorDropdown.addEventListener("change", function(){
+    currentColor = colorDropdown.value;
+})
+
+
+
+
+
