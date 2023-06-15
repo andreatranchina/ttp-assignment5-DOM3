@@ -75,3 +75,22 @@ addRowBtn.addEventListener("click", function() {
     grid.style.gridTemplateRows = `repeat(${numRows}, 1fr)`; 
 
 })
+
+//remove cols
+let rmRowBtn = document.querySelector(".btn-rm-row");
+rmRowBtn.addEventListener("click", removeRow);
+
+function removeRow(){
+    let grid = document.querySelector(".grid");
+
+    if(numCols!=0||numRows!=0){
+        for (let i=0; i< numCols; i++){
+            grid.lastChild.remove();
+        }
+        numRows--;
+        grid.style.gridTemplateRows = `repeat(${numRows}, 1fr)`; 
+    }
+    if(numRows===0){
+        numCols = 0;
+    }
+}
