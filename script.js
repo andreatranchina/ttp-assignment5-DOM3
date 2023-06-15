@@ -98,7 +98,7 @@ function removeRow(){
 }
 
 //select a color from dropdown
-let currentColor = "";
+let currentColor = "white";
 
 let colorDropdown = document.querySelector(".dropdown");
 
@@ -112,8 +112,11 @@ let cellGrid = document.querySelector(".grid");
 
 cellGrid.addEventListener("click", function(event){
     let cell = event.target;
+   // if(cell.className=="cell"){
     cell.style.backgroundColor = currentColor;
+   // }
 })
+
 
 //clear all cell colors
 let btnClear = document.querySelector(".btn-clear-all");
@@ -121,7 +124,7 @@ btnClear.addEventListener("click", function (){
     let cellNodeList = document.querySelectorAll(".cell");
     let cellArray = [...cellNodeList];
     for(let i=0; i<cellArray.length; i++){
-        cellArray[i].style.backgroundColor = "";
+        cellArray[i].style.backgroundColor = "white";
     }
 })
 
@@ -131,7 +134,7 @@ fillAllU.addEventListener("click", function(){
     let cellNodeList = document.querySelectorAll(".cell");
     let cellArray = [...cellNodeList];
     for(let i=0; i<cellArray.length; i++){
-        if(cellArray[i].style.backgroundColor==""){
+        if(cellArray[i].style.backgroundColor=="white"){
             cellArray[i].style.backgroundColor = currentColor;
         }
     }
@@ -147,4 +150,24 @@ btnFillAll.addEventListener("click", function(){
     }
 })
 
+//drag n' color!
+let isMouseDown = false;
+document.addEventListener("mousedown",function(){
+    isMouseDown = true;
+}) 
 
+document.addEventListener("mouseup",function(){
+    isMouseDown = false;
+}) 
+
+let gridCells = document.querySelectorAll(".cell");
+let gridCellArray = [...gridCells];
+
+for(let i = 0; i < gridCellArray.length; i++){
+    gridCellArray[i].addEventListener("mouseover", function(event){
+        if(isMouseDown){
+            let cells = event.target;
+            cells.style.backgroundColor = currentColor;
+        }
+    })
+}
