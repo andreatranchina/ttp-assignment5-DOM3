@@ -1,9 +1,9 @@
 let numRows = 0;
 let numCols = 0;
-let button = document.querySelector(".btn-add-col");
-let buttonRemoveCol = document.querySelector(".btn-rmCol");
 
 //add columns
+let button = document.querySelector(".btn-add-col");
+
 button.addEventListener("click", function() {
 
     let grid = document.querySelector(".grid");
@@ -31,6 +31,7 @@ button.addEventListener("click", function() {
 })
 
 //remove columns
+let buttonRemoveCol = document.querySelector(".btn-rmCol");
 buttonRemoveCol.addEventListener("click", removeCol);
 
 function removeCol(){
@@ -112,9 +113,9 @@ let cellGrid = document.querySelector(".grid");
 
 cellGrid.addEventListener("click", function(event){
     let cell = event.target;
-   // if(cell.className=="cell"){
+   if(cell.classList[0]=="cell"){
     cell.style.backgroundColor = currentColor;
-   // }
+   }
 })
 
 
@@ -160,14 +161,28 @@ document.addEventListener("mouseup",function(){
     isMouseDown = false;
 }) 
 
-let gridCells = document.querySelectorAll(".cell");
-let gridCellArray = [...gridCells];
+// cellGrid.addEventListener("mouseover", function(event){
+//     if (isMouseDown){
+//         let cells = event.target;
+//         if (cells.classList[0] == "cells")
+//         cells.style.backgroundColor = currentColor;
+//     }
+// })
 
-for(let i = 0; i < gridCellArray.length; i++){
-    gridCellArray[i].addEventListener("mouseover", function(event){
-        if(isMouseDown){
-            let cells = event.target;
-            cells.style.backgroundColor = currentColor;
-        }
-    })
-}
+cellGrid.onmouseover = function (event) {
+    if (isMouseDown) {
+      event.target.style.backgroundColor = getSelectedColor();
+    }
+  };
+
+// let gridCells = document.querySelectorAll(".cell");
+// let gridCellArray = [...gridCells];
+
+// for(let i = 0; i < gridCellArray.length; i++){
+//     gridCellArray[i].addEventListener("mouseover", function(event){
+//         if(isMouseDown){
+//             let cells = event.target;
+//             cells.style.backgroundColor = currentColor;
+//         }
+//     })
+// }
