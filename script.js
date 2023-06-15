@@ -104,6 +104,14 @@ colorDropdown.addEventListener("change", function(){
     currentColor = colorDropdown.value;
 })
 
+//change color of selected cell
+let cellGrid = document.querySelector(".grid");
+
+cellGrid.addEventListener("click", function(event){
+    let cell = event.target;
+    cell.style.backgroundColor = currentColor;
+})
+
 
 
 
