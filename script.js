@@ -3,6 +3,7 @@ let numCols = 0;
 let button = document.querySelector(".btn-add-col");
 let buttonRemoveCol = document.querySelector(".btn-rmCol");
 
+//add columns
 button.addEventListener("click", function() {
 
     let grid = document.querySelector(".grid");
@@ -29,6 +30,7 @@ button.addEventListener("click", function() {
     return numCols;
 })
 
+//remove columns
 buttonRemoveCol.addEventListener("click", removeCol);
 
 function removeCol(){
@@ -76,7 +78,7 @@ addRowBtn.addEventListener("click", function() {
 
 })
 
-//remove cols
+//remove rows
 let rmRowBtn = document.querySelector(".btn-rm-row");
 rmRowBtn.addEventListener("click", removeRow);
 
@@ -99,6 +101,7 @@ function removeRow(){
 let currentColor = "";
 
 let colorDropdown = document.querySelector(".dropdown");
+
 
 colorDropdown.addEventListener("change", function(){
     currentColor = colorDropdown.value;
