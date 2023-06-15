@@ -125,4 +125,16 @@ btnClear.addEventListener("click", function (){
     }
 })
 
+//fill all uncolored 
+let fillAllU = document.querySelector(".btn-fill-u");
+fillAllU.addEventListener("click", function(){
+    let cellNodeList = document.querySelectorAll(".cell");
+    let cellArray = [...cellNodeList];
+    for(let i=0; i<cellArray.length; i++){
+        if(cellArray[i].style.backgroundColor==""){
+            cellArray[i].style.backgroundColor = currentColor;
+        }
+    }
+})
+
 
