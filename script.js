@@ -112,8 +112,11 @@ let cellGrid = document.querySelector(".grid");
 
 cellGrid.addEventListener("click", function(event){
     let cell = event.target;
+   // if(cell.className=="cell"){
     cell.style.backgroundColor = currentColor;
+   // }
 })
+
 
 //clear all cell colors
 let btnClear = document.querySelector(".btn-clear-all");
@@ -147,4 +150,24 @@ btnFillAll.addEventListener("click", function(){
     }
 })
 
+//drag n' color!
+let isMouseDown = false;
+document.addEventListener("mousedown",function(){
+    isMouseDown = true;
+}) 
 
+document.addEventListener("mouseup",function(){
+    isMouseDown = false;
+}) 
+
+let gridCells = document.querySelectorAll(".cell");
+let gridCellArray = [...gridCells];
+
+for(let i = 0; i < gridCellArray.length; i++){
+    gridCellArray[i].addEventListener("mouseover", function(event){
+        if(isMouseDown){
+            let cells = event.target;
+            cells.style.backgroundColor = currentColor;
+        }
+    })
+}
