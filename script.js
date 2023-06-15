@@ -49,3 +49,29 @@ function removeCol(){
     return numCols;
 }
 
+//add rows
+let addRowBtn = document.querySelector(".btn-add-row");
+addRowBtn.addEventListener("click", function() {
+
+    let grid = document.querySelector(".grid");
+
+    if(numCols===0){
+        let newCell = document.createElement("div");
+        newCell.classList.add("cell");
+    
+        grid.appendChild(newCell);
+        numCols++;
+    }
+    else{
+        for (let i=0; i< numCols; i++){
+            let newCell = document.createElement("div");
+            newCell.classList.add("cell");
+    
+            grid.appendChild(newCell);
+        }
+    }
+
+    numRows++;
+    grid.style.gridTemplateRows = `repeat(${numRows}, 1fr)`; 
+
+})
