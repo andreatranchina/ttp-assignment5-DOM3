@@ -111,7 +111,7 @@ colorDropdown.addEventListener("change", function(){
 //change color of selected cell
 let cellGrid = document.querySelector(".grid");
 
-cellGrid.addEventListener("click", function(event){
+cellGrid.addEventListener("mousedown", function(event){
     let cell = event.target;
    if(cell.classList[0]=="cell"){
     cell.style.backgroundColor = currentColor;
@@ -161,28 +161,24 @@ document.addEventListener("mouseup",function(){
     isMouseDown = false;
 }) 
 
-// cellGrid.addEventListener("mouseover", function(event){
-//     if (isMouseDown){
-//         let cells = event.target;
-//         if (cells.classList[0] == "cells")
-//         cells.style.backgroundColor = currentColor;
-//     }
-// })
-
-cellGrid.onmouseover = function (event) {
-    if (isMouseDown) {
-      event.target.style.backgroundColor = getSelectedColor();
+cellGrid.addEventListener("mouseover", function(event){
+    if (isMouseDown){
+        let cells = event.target;
+        if (cells.classList[0] == "cell")
+        cells.style.backgroundColor = currentColor;
     }
-  };
+})
+
 
 // let gridCells = document.querySelectorAll(".cell");
 // let gridCellArray = [...gridCells];
 
 // for(let i = 0; i < gridCellArray.length; i++){
 //     gridCellArray[i].addEventListener("mouseover", function(event){
-//         if(isMouseDown){
-//             let cells = event.target;
-//             cells.style.backgroundColor = currentColor;
-//         }
+//         this.style.backgroundColor = currentColor;
+//         // if(isMouseDown){
+//             // let cells = event.target;
+//             // cells.style.backgroundColor = currentColor;
+//         // }
 //     })
 // }
